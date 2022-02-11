@@ -1,16 +1,14 @@
 from fastapi import FastAPI
 # from config import settings
-from .models import Base
-from .database import engine
-from .routers import transactions, users, auth
-# from fastapi.middleware.cors import CORSMiddleware 
+from app.models import Base
+from app.database import engine
+from app.routers import transactions, users, auth
+from fastapi.middleware.cors import CORSMiddleware 
  
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-origins = ["*"]
+# origins = ['*']
 
 # app.add_middleware(
 #     CORSMiddleware,
